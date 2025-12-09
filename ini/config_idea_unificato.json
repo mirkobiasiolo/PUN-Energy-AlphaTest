@@ -1,0 +1,101 @@
+{
+  "base_path": ".",
+  "paths": {
+    "from_local": "FromiDea.xml",
+    "from_remote": "FromiDea_remoto.xml",
+    "toidea": "ToiDea.xml",
+    "sharing_xml": "sharingiDea.xml",
+    "debito_txt": "DebitoEnergetico.txt",
+    "guardrail_txt": "guardrail_auto-consumo_locale.txt",
+    "service_status_txt": "service_status.txt",
+    "macchina_allarme_txt": "MacchinaAllarme.txt"
+  },
+  "meter": {
+    "contatore_prelievo_w": 6000,
+    "contatore_immissione_w": 6000
+  },
+  "battery": {
+    "capacity_kwh": 8.0,
+    "emergency": {
+      "start_soc_dec": 50,
+      "stop_soc_dec": 400,
+      "ibat_low_min": 0,
+      "ibat_low_max": 500,
+      "step_emergency_1101": 50,
+      "emergency_1101_max": 0,
+      "use_meter_control": true,
+      "grid_limit_w": 2800,
+      "grid_hysteresis_w": 100
+    },
+    "guardrail_autoconsumo": {
+      "par_1101_min": -500
+    }
+  },
+  "autoconsumo": {
+    "param1101_min": 70,
+    "param1101_max": 6000,
+    "grid_setpoint_1090": 5000,
+    "grid_deadband": 50,
+    "step_local": 20,
+    "step_community": 20,
+    "bt_loss_factor": 0.1,
+    "soc_threshold_community": 950
+  },
+  "services": {
+    "carica_forzata_dso": "manual",
+    "scarica_forzata_dso": "manual",
+    "trading_scarica": "manual",
+    "trading_carica": "manual"
+  },
+  "programs": {
+    "dso_programs": [
+      {
+        "id": "DSO_POTENZA_A_SCENDERE_1",
+        "mode": "carica_forzata_dso",
+        "days": [
+          "2025-01-12"
+        ],
+        "start": "10:00",
+        "end": "10:00"
+      },
+      {
+        "id": "DSO_SCARICA_FORZATA_1",
+        "mode": "scarica_forzata_dso",
+        "days": [
+          "2025-01-15"
+        ],
+        "start": "11:00",
+        "end": "11:15"
+      }
+    ],
+    "trading_programs": [
+      {
+        "id": "TRADING_SCARICA_1",
+        "mode": "partizione_scarica_trading",
+        "days": [
+          "2025-01-16"
+        ],
+        "start": "13:15",
+        "end": "14:00",
+        "partition_soc_dec": 500
+      },
+      {
+        "id": "TRADING_CARICA_1",
+        "mode": "partizione_carica_trading",
+        "days": [
+          "2025-01-16"
+        ],
+        "start": "02:00",
+        "end": "03:00",
+        "partition_soc_dec": 950
+      }
+    ]
+  },
+  "flags": {
+    "autoconsumo_enabled": true,
+    "service_active": false,
+    "macchina_allarme": false,
+    "debito_energetico": false,
+    "sharing_enabled": true
+  }
+}
