@@ -1,0 +1,57 @@
+# ==== Serial / Modbus ====
+serial_port: "/dev/ttyUSB0"
+slave_id: 1
+baudrate: 9600
+serial_timeout_ms: 500
+parity: "NONE"             # valuta "EVEN" (8E1) se il tuo device è Modbus classico
+stopbits: 1
+handle_local_echo: 0
+inter_byte_timeout_ms: 10
+read_functioncode: 3
+address_correction: 1      # YAML = Form1
+
+# Rispetto tempi RTU
+rtu_gap_ms: 5
+
+# ==== Avvio ====
+autorun: 1
+startup_warmup_ms: 700
+startup_dummy_reads: 3
+
+# ==== Letture ====
+read_blocks: [1070,1072,1074,1076,1080,1090,1101,1102,1103]        # <-- metti l’elenco reale (puoi rimettere [1,2,3,4,5,6,1007,1008,1009])
+max_retry: 4
+retry_backoff_ms: 80
+poll_ms: 500
+poll_jitter_ms: 20
+from_include_meta: true
+bus_log_cooldown_s: 5
+
+# Lettura adattiva
+read_max_chunk: 4
+read_min_chunk: 1
+error_reopen_threshold: 3
+reopen_cooldown_s: 10
+flush_on_error: true
+
+# ==== Writer (in coda, gestito dal worker) ====
+writer_sleep_ms: 200
+writer_settle_ms: 30
+write_retries: 3
+verify_writes: 1
+writer_commit_register: 0
+writer_commit_value: 1
+max_writes_per_cycle: 50
+
+# ==== Rilevazione foreign-master (diagnostica) ====
+foreign_window_s: 10
+foreign_threshold: 3
+
+# ==== XML / CSV ====
+xml_retry: 10
+xml_retry_backoff_ms: 60
+xml_ignore_errors: true   # consigliato true su Windows se apri spesso FromiDea.xml
+csv_enable: true
+log_rollover_bytes: 5000000
+log_rollover_hourly: false
+

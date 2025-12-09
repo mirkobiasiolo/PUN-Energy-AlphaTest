@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='utf-8'?>
+<DATI>
+  <ID>10003</ID>        
+  <CMD>07</CMD>         
+  <IND>1102</IND>       
+  <VAL>3</VAL>        
+  <DTYPE>U16</DTYPE>   <!-- U16 | S16 | U32 | S32 (opzionale, default U16) -->
+</DATI>
