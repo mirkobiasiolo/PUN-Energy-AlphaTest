@@ -1,0 +1,59 @@
+{
+  "battery": {
+    "capacity_kwh": 8.0,
+    "emergency": {
+      "start_soc_dec": 50
+    },
+    "guardrail_autoconsumo": {
+      "par_1101_min": 0
+    }
+  },
+
+  "services": {
+    "carica_forzata_dso": "manual",
+    "scarica_forzata_dso": "manual",
+    "trading_scarica": "manual",
+    "trading_carica": "manual"
+  },
+
+  "dso_programs": [
+    {
+      "id": "DSO_POTENZA_A_SCENDERE_1",
+      "mode": "carica_forzata_dso",
+      "days": ["2025-01-12"],
+      "start": "10:00",
+      "end": "10:00"
+    },
+    {
+      "id": "DSO_SCARICA_FORZATA_1",
+      "mode": "scarica_forzata_dso",
+      "days": ["2025-01-15"],
+      "start": "11:00",
+      "end": "11:15"
+    }
+  ],
+
+  "trading_programs": [
+    {
+      "id": "TRADING_SCARICA_1",
+      "mode": "partizione_scarica_trading",
+      "days": ["2025-01-16"],
+      "start": "13:15",
+      "end": "14:00",
+      "partition_soc_dec": 500
+    },
+    {
+      "id": "TRADING_CARICA_1",
+      "mode": "partizione_carica_trading",
+      "days": ["2025-01-16"],
+      "start": "02:00",
+      "end": "03:00"
+    }
+  ],
+
+  "stop_carica_emergenza_soc_dec": 400,
+
+  "notes": {
+    "services": "Per ogni servizio: 'auto' = avvio automatico all'avvio di battery_controller.py; 'manual' = avvio manuale (es. da terminale python carica_forzata_dso.py). Le chiavi valide sono: carica_forzata_dso, scarica_forzata_dso, trading_scarica, trading_carica."
+  }
+}

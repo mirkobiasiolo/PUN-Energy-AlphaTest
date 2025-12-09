@@ -15,12 +15,10 @@ import xml.etree.ElementTree as ET
 import minimalmodbus, serial
 
 # ───── Percorsi
-#BASE_DIR  = Path.home() / "Desktop" / "software iDea"
-BASE_DIR  = Path.home() / "test_vari" / "test2025-12-01"
+BASE_DIR  = Path.home() / "Desktop" / "test 2025-12-05" / "dati"
 FROM_FILE = BASE_DIR / "FromiDea.xml"
 TO_FILE   = BASE_DIR / "ToiDea.xml"
 CFG_FILE  = BASE_DIR / "ServeriDeaConfig.yaml"
-print(f"BASE_DIR={BASE_DIR}")
 
 # ───── Config
 CFG_MTIME, CFG = 0, {}
@@ -253,18 +251,13 @@ def io_worker():
                 while attempts < w_retries and not ok:
                     attempts += 1
                     try:
-                        signed_value = cmd["VAL"]
-                        #if "DTYPE" in cmd and cmd["DTYPE"] == "S16" and cmd["VAL"] < 0:
-                        if cmd["VAL"] < 0:
-                            signed_value = cmd["VAL"] & 0xFFFF
-                        print(f"Invio la scrittura di {signed_value}")    
-                        BUS.write_reg(cmd["IND"], signed_value)
+                        BUS.write_reg(cmd["IND"], cmd["VAL"])
                         if cmd["CMD"] == "09" and commit_reg > 0:
                             BUS.write_reg(commit_reg, commit_val)
                         ok = True
                     except Exception as e:
                         msg = str(e)
-                        print("[WRITER ERR] Exception 1 => ", msg)
+                        print("[WRITER ERR]", msg)
                         # function code inatteso = probabile frame "di altri"
                         if "Wrong functioncode" in msg or "functioncode" in msg:
                             note_foreign()
