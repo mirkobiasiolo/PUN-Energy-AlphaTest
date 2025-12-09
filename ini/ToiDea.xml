@@ -1,9 +1,9 @@
 <?xml version='1.0' encoding='utf-8'?>
 <DATI>
-  <ID>403</ID>
+  <ID>11</ID>
   <CMD>07</CMD>
   <IND>1101</IND>
-  <VAL>6000</VAL>
+  <VAL>70</VAL>
   <DTYPE>U16</DTYPE>
   
 </DATI>

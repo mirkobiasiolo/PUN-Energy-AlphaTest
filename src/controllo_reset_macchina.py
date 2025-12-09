@@ -189,7 +189,7 @@ class MachineStateResetService:
 
 def main():
     service = MachineStateResetService()
-    ticket_time_s = 30
+    ticket_time_s = 15
 
     print(f"Servizio controllo_reset stato macchina avviato (tick={ticket_time_s}s). Ctrl-C per uscire.")
     try:
