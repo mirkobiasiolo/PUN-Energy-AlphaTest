@@ -7,7 +7,7 @@ from pathlib import Path
 class IdeaNodeController:
     def __init__(self):
         # ====== PERCORSI FILE ======
-        BASE_DIR  = Path.home() / "Desktop" / "test 2025-12-05" / "dati"
+        BASE_DIR  = Path.home() / "Desktop" / "test 2025-12-06"
         
         self.local_fromiDea_path = BASE_DIR / "FromiDea.xml"
         self.remote_fromiDea_path = BASE_DIR / "FromiDea_remoto.xml"

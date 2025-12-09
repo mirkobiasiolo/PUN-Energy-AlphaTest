@@ -9,7 +9,7 @@ from pathlib import Path
 class BatteryController:
     def __init__(self):
         # ====== PERCORSI FILE ======
-        self.base_path = Path.home() / "Desktop" / "test 2025-12-05" / "dati"
+        self.base_path = Path.home() / "Desktop" / "test 2025-12-06"
 
         self.local_fromiDea_path = os.path.join(self.base_path, "FromiDea.xml")
         self.toiDea_path = os.path.join(self.base_path, "ToiDea.xml")

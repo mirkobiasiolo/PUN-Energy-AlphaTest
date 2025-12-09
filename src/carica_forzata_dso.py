@@ -36,7 +36,7 @@ class CaricaForzataDSO:
 
     def __init__(self):
         # ====== PERCORSI ======
-        self.base_path = Path.home() / "Desktop" / "test 2025-12-05" / "dati"
+        self.base_path = Path.home() / "Desktop" / "test 2025-12-06"
         self.from_path = os.path.join(self.base_path, "FromiDea.xml")
         self.to_path = os.path.join(self.base_path, "ToiDea.xml")
         self.guardrail_path = os.path.join(self.base_path, "guardrail_auto-consumo_locale.txt")
