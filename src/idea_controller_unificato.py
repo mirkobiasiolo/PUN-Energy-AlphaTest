@@ -62,7 +62,7 @@ class ConfigManager:
     # ------------------------------------------------------------------
     def _default_config(self) -> dict:
         return {
-            "base_path": ".",
+            "base_path": r"C:\Users\PC\Desktop\ME server iDea demo",
             "paths": {
                 "from_local": "FromiDea.xml",
                 "from_remote": "FromiDea_remoto.xml",
@@ -1337,4 +1337,3 @@ class IdeaUnifiedApp:
 if __name__ == "__main__":
     app = IdeaUnifiedApp(base_path=None)
     app.run_forever()
-

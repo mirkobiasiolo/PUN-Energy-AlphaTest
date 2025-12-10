@@ -1,5 +1,5 @@
 {
-  "base_path": ".",
+  "base_path": "C:\\Users\\PC\\Desktop\\ME server iDea demo",
   "paths": {
     "from_local": "FromiDea.xml",
     "from_remote": "FromiDea_remoto.xml",
@@ -11,11 +11,11 @@
     "macchina_allarme_txt": "MacchinaAllarme.txt"
   },
   "meter": {
-    "contatore_prelievo_w": 3000,
-    "contatore_immissione_w": 3000
+    "contatore_prelievo_w": 6000,
+    "contatore_immissione_w": 6000
   },
   "battery": {
-    "capacity_kwh": 7.8,
+    "capacity_kwh": 8.0,
     "emergency": {
       "start_soc_dec": 50,
       "stop_soc_dec": 400,
@@ -28,12 +28,12 @@
       "grid_hysteresis_w": 100
     },
     "guardrail_autoconsumo": {
-      "par_1101_min": -1500
+      "par_1101_min": -500
     }
   },
   "autoconsumo": {
     "param1101_min": 70,
-    "param1101_max": 3000,
+    "param1101_max": 6000,
     "grid_setpoint_1090": 5000,
     "grid_deadband": 50,
     "step_local": 20,
