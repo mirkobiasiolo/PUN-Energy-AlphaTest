@@ -17,7 +17,7 @@ class MachineStateResetService:
 
     def __init__(self):
         # ====== PERCORSI FILE ======
-        self.base_path = Path.home() / "Desktop" / "test 2025-12-06"
+        self.base_path = Path.home() / "Desktop" / "alfa_test"
         self.from_path = os.path.join(self.base_path, "FromiDea.xml")
         self.to_path = os.path.join(self.base_path, "ToiDea.xml")
         self.alarm_file_path = os.path.join(self.base_path, "MacchinaAllarme.txt")

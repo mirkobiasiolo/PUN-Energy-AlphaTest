@@ -1,5 +1,5 @@
 {
-  "base_path": "C:\\Users\\PC\\Desktop\\ME server iDea demo",
+  "base_path": ".",
   "paths": {
     "from_local": "FromiDea.xml",
     "from_remote": "FromiDea_remoto.xml",
@@ -52,18 +52,14 @@
       {
         "id": "DSO_POTENZA_A_SCENDERE_1",
         "mode": "carica_forzata_dso",
-        "days": [
-          "2025-01-12"
-        ],
+        "days": ["2025-01-12"],
         "start": "10:00",
         "end": "10:00"
       },
       {
         "id": "DSO_SCARICA_FORZATA_1",
         "mode": "scarica_forzata_dso",
-        "days": [
-          "2025-01-15"
-        ],
+        "days": ["2025-01-15"],
         "start": "11:00",
         "end": "11:15"
       }
@@ -72,9 +68,7 @@
       {
         "id": "TRADING_SCARICA_1",
         "mode": "partizione_scarica_trading",
-        "days": [
-          "2025-01-16"
-        ],
+        "days": ["2025-01-16"],
         "start": "13:15",
         "end": "14:00",
         "partition_soc_dec": 500
@@ -82,9 +76,7 @@
       {
         "id": "TRADING_CARICA_1",
         "mode": "partizione_carica_trading",
-        "days": [
-          "2025-01-16"
-        ],
+        "days": ["2025-01-16"],
         "start": "02:00",
         "end": "03:00",
         "partition_soc_dec": 950

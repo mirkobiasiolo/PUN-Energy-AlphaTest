@@ -62,7 +62,7 @@ class ConfigManager:
     # ------------------------------------------------------------------
     def _default_config(self) -> dict:
         return {
-            "base_path": r"C:\Users\PC\Desktop\ME server iDea demo",
+            "base_path": ".",
             "paths": {
                 "from_local": "FromiDea.xml",
                 "from_remote": "FromiDea_remoto.xml",

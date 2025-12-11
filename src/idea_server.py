@@ -15,7 +15,7 @@ import xml.etree.ElementTree as ET
 import minimalmodbus, serial
 
 # ───── Percorsi
-BASE_DIR  = Path.home() / "Desktop" / "test 2025-12-07"
+BASE_DIR  = Path.home() / "Desktop" / "alfa_test"
 FROM_FILE = BASE_DIR / "FromiDea.xml"
 TO_FILE   = BASE_DIR / "ToiDea.xml"
 CFG_FILE  = BASE_DIR / "ServeriDeaConfig.yaml"
