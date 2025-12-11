@@ -1,0 +1,25 @@
+ATTENZIONE! Ora i test si fanno tramite la cartella "test 2025-12-07" e così
+            le altre cartelle di test sono state spostate in
+            /home/pi02/test_vari per evitare di confondersi.
+----------------------------------------------------------------------------
+Per andare nella cartella del software di test:
+1) aprire il terminale / command line / prompt
+2) entrare nella directory del test
+cd Desktop/test\ 2025-12-07/
+cd Desktop/test\ 2025-12-06/
+3) attivare Python:
+source /home/pi02/venv/bin/activate
+==> se vedi (venv) allora è OK
+4) eseguire il programma di test
+
+python idea_server.py
+
+python controller_idea.py
+
+python battery_controller.py
+
+python carica_forzata_dso.py
+
+python controllo_reset_macchina.py
+
+python idea_controller_unificato.py
