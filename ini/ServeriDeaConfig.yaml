@@ -19,7 +19,15 @@ startup_warmup_ms: 700
 startup_dummy_reads: 3
 
 # ==== Letture ====
-read_blocks: [1001,1002,1003,1004,1005,1010,1011,1012,1013,1020,1021,1022,1023,1030,1032,1034,1036,1040,1041,1042,1060,1062,1063,1064,1065,1066,1070,1072,1074,1080,1090]        # <-- metti l’elenco reale (puoi rimettere [1,2,3,4,5,6,1007,1008,1009])
+read_blocks: [1001,1002,1003,1004,1005,
+              1010,1011,1012,1013,
+              1020,1021,1022,1023,
+              1030,1032,1034,1036,
+              1040,1041,1042,
+              1060,1062,1063,1064,1065,1066,
+              1070,1072,1074,
+              1080,
+              1090]
 max_retry: 4
 retry_backoff_ms: 80
 poll_ms: 500
@@ -34,14 +42,12 @@ error_reopen_threshold: 3
 reopen_cooldown_s: 10
 flush_on_error: true
 
-# ==== Writer (in coda, gestito dal worker) ====
-writer_sleep_ms: 200
-writer_settle_ms: 30
+# ==== Writer (ToiDea -> Modbus, IMMEDIATO, nessuna coda) ====
+writer_sleep_ms: 100       # ogni quanto il watcher controlla ToiDea.xml
 write_retries: 3
 verify_writes: 1
 writer_commit_register: 0
 writer_commit_value: 1
-max_writes_per_cycle: 50
 
 # ==== Rilevazione foreign-master (diagnostica) ====
 foreign_window_s: 10
@@ -50,7 +56,7 @@ foreign_threshold: 3
 # ==== XML / CSV ====
 xml_retry: 10
 xml_retry_backoff_ms: 60
-xml_ignore_errors: true   # consigliato true su Windows se apri spesso FromiDea.xml
+xml_ignore_errors: true    # consigliato true su Windows se apri spesso FromiDea.xml
 csv_enable: true
 log_rollover_bytes: 5000000
 log_rollover_hourly: false
